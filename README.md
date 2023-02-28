@@ -10,9 +10,16 @@ Towards that goal, we wanted to make it easier to go from protein structures to 
   2. Utilized pySCF to find the right Hamiltonian setup for Hartree-Fock representations of the basis set that was picked. 
   3. Decompose matrix to Givens Rotations through Trotter decomposition only since the Givens can handle the QR decomposition into unitary.
   4. Setup Givens Rotation based VQE circuit with pair exchanges 
-  
+ 
+ #Example
  To run this project, please run the setupVQEForHamiltonianMatrix function within setupGivens for the example file, Proline. 
+ 
+ Here is an example output, with the SCF energy from pySCF printed to serve as a benchmark for the VQE, as well as the final circuit: 
+ <img width="954" alt="image" src="https://user-images.githubusercontent.com/7109370/221997817-eb64d5f9-d5df-4555-9400-43c30eba9202.png">
+
  
  # Goals
  We hope to implement this method with a quantum-based optimizer sometime soon in order to actually run the VQE for many iterations, and that implementation on hardware would lead to fewer errors than Trotter-Suzuki due to further padding provided by Givens structures.
+ 
+ 
 
