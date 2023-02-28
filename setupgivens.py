@@ -31,13 +31,13 @@ def getAngleForVQEFromHamiltonMatrixDeterminant(matrix, noOfAtoms):
 
 #gets the exponential setup for a given Hamiltonian matrix via Trotter decomposition
 def getReciprocalDiagonal(matrix):
-	return 1/(np.sum(np.prod(matrix)))
+	return 1/(np.prod(np.diag(matrix)))
 
 
 def setupVQEForHamiltonianMatrix(fileName, proteinName): 
 	hfMatrix = getHFCoefficientsBasedOnBestBasisSets(fileName, proteinName)
 	reciprocalDiagonal = getReciprocalDiagonal(hfMatrix)
-	if(".pdb" in smile):
+	if(".pdb" in fileName):
 		mol = Chem.MolFromPDBFile(fileName)
 	else:	
 		mol = Chem.MolFromSmiles(fileName)
