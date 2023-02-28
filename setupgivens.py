@@ -31,7 +31,7 @@ def getAngleForVQEFromHamiltonMatrixDeterminant(matrix, noOfAtoms):
 
 #gets the exponential setup for a given Hamiltonian matrix via Trotter decomposition
 def getReciprocalDiagonal(matrix):
-	return 1/(np.prod(np.diag(matrix)))
+	return 1/(np.sum(np.diag(matrix)))
 
 
 def setupVQEForHamiltonianMatrix(fileName, proteinName): 
